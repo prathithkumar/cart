@@ -1,4 +1,4 @@
-@Library('my-shared-library@main')_
+@Library('roboshop-shared-library@main') _
 
 pipeline {
     agent any 
@@ -15,7 +15,6 @@ pipeline {
                 sh "echo linkChecks completed"
             }
         }
-
         stage('Generating Artifacts') {
             steps {
                 sh "echo Generating Artifacts...."
