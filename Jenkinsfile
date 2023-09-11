@@ -1,3 +1,5 @@
+@Library('my-shared-library@main')_
+
 pipeline {
     agent any 
     stages {
@@ -8,6 +10,14 @@ pipeline {
                 sh "echo starting lintChecks ....."
                 sh "node_modules/jslint/bin/jslint.js server.js || true"
                 sh "echo linkChecks completed"
+            }
+        }
+
+        stage('Generating Artifacts') {
+            steps {
+                sh "echo Generating Artifacts...."
+                sh "npm install && ls -ltr"
+
             }
         }
     }
