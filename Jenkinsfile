@@ -5,6 +5,9 @@ pipeline {
     stages {
         stage('Lint Checks') {
             steps {
+                script {
+                    sample.info()
+                }
                 sh "echo Installing JSlist"
                 sh "npm i jslint"
                 sh "echo starting lintChecks ....."
